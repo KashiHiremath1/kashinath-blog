@@ -1,92 +1,82 @@
-<!-- Full HTML updated with expanded content for each section -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Head content remains the same -->
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Kashinath Hiremath | Blog</title>
-  <style>
-    /* CSS remains unchanged */
-    /* (Omitted here for brevity) */
-  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AWS Blogs Clone</title>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-  <header>
-    <h1>Kashinath Hiremath</h1>
-    <nav>
-      <a href="#home">Home</a>
-      <a href="#about">About</a>
-      <a href="#projects">Projects</a>
-      <a href="#certifications">Certifications</a>
-      <a href="#contact">Contact</a>
-    </nav>
+<body class="bg-gray-100 text-gray-800">
+
+  <!-- Header -->
+  <header class="bg-white shadow">
+    <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+      <h1 class="text-2xl font-bold text-[#232f3e]">AWS Blogs</h1>
+      <nav class="space-x-4">
+        <a href="#" class="text-sm font-medium text-gray-700 hover:text-black">Home</a>
+        <a href="#" class="text-sm font-medium text-gray-700 hover:text-black">Categories</a>
+        <a href="#" class="text-sm font-medium text-gray-700 hover:text-black">About</a>
+      </nav>
+    </div>
   </header>
 
-  <div class="nav-buttons">
-    <button onclick="scrollToSection(-1)">&#8592;</button>
-    <button onclick="scrollToSection(1)">&#8594;</button>
-  </div>
+  <!-- Main Content -->
+  <main class="container mx-auto px-4 py-6 flex flex-col md:flex-row gap-6">
 
-  <main id="main-container">
-    <section id="home">
-      <h2>Welcome to My Blog</h2>
-      <p>Hello! I'm Kashinath Hiremath, a tech enthusiast and software developer. On this blog, I share my journey, thoughts, and lessons learned from real-world projects.</p>
-      <p>Expect technical deep-dives, project showcases, certification stories, and more. Whether you're here to learn, collaborate, or just explore — welcome!</p>
-    </section>
-
-    <section id="about">
-      <h2>About Me</h2>
-      <p>I’m a frontend developer with 8+ years of experience in HTML, CSS, JavaScript, Angular, and modern frameworks. My focus lies in building responsive, accessible, and performant user interfaces.</p>
-      <p>My passion is solving real-world problems through clean, user-friendly design and robust engineering practices. I also mentor junior developers and contribute to open-source projects.</p>
-      <p>Outside of tech, I enjoy hiking, music, and photography.</p>
-    </section>
-
-    <section id="projects">
-      <h2>Projects</h2>
-      <ul>
-        <li><strong>SKIPP Platform:</strong> Worked on predictive maintenance tools using cloud integration for Stellantis vehicles.</li>
-        <li><strong>Web Games Widget:</strong> Developed an interactive game platform optimized for automotive infotainment systems.</li>
-        <li><strong>Responsive Portfolio Site:</strong> Designed a personal portfolio with full accessibility and SEO best practices.</li>
+    <!-- Sidebar Filters -->
+    <aside class="w-full md:w-1/4 bg-white rounded shadow p-4">
+      <h2 class="text-lg font-semibold mb-4">Filter by Category</h2>
+      <ul class="space-y-2 text-sm">
+        <li><input type="checkbox" id="compute" /> <label for="compute">Compute</label></li>
+        <li><input type="checkbox" id="storage" /> <label for="storage">Storage</label></li>
+        <li><input type="checkbox" id="devops" /> <label for="devops">DevOps</label></li>
+        <li><input type="checkbox" id="ai" /> <label for="ai">AI/ML</label></li>
+        <li><input type="checkbox" id="iot" /> <label for="iot">IoT</label></li>
       </ul>
-      <p>Visit my GitHub or contact me for source code and live demos.</p>
-    </section>
+    </aside>
 
-    <section id="certifications">
-      <h2>Certifications</h2>
-      <ul>
-        <li>Certified Frontend Developer – Google Coursera (2023)</li>
-        <li>Responsive Web Design – freeCodeCamp</li>
-        <li>Advanced JavaScript – Udemy</li>
-        <li>Agile Project Management – Atlassian University</li>
-      </ul>
-    </section>
+    <!-- Blog Grid -->
+    <section class="flex-1">
+      <div class="grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+        <!-- Blog Card -->
+        <div class="bg-white rounded shadow hover:shadow-lg transition">
+          <img src="https://via.placeholder.com/400x200" class="rounded-t" alt="Blog Image" />
+          <div class="p-4">
+            <h3 class="text-lg font-semibold text-blue-800">How to Get Started with AWS Lambda</h3>
+            <p class="text-sm text-gray-500 mb-2">June 5, 2025</p>
+            <p class="text-sm text-gray-700">Learn how to build serverless applications using AWS Lambda and best practices...</p>
+          </div>
+        </div>
 
-    <section id="contact">
-      <h2>Contact Me</h2>
-      <p>I'd love to hear from you! Whether it's a question, feedback, or collaboration idea, feel free to drop a message below.</p>
-      <form name="contact" method="POST" data-netlify="true">
-        <input type="text" name="name" placeholder="Your Name" required />
-        <input type="email" name="email" placeholder="Your Email" required />
-        <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
-        <button type="submit">Send</button>
-      </form>
+        <!-- Repeat -->
+        <div class="bg-white rounded shadow hover:shadow-lg transition">
+          <img src="https://via.placeholder.com/400x200" class="rounded-t" alt="Blog Image" />
+          <div class="p-4">
+            <h3 class="text-lg font-semibold text-blue-800">Data Analytics on AWS</h3>
+            <p class="text-sm text-gray-500 mb-2">June 4, 2025</p>
+            <p class="text-sm text-gray-700">A deep dive into modern data lakes and analytics workflows on the cloud.</p>
+          </div>
+        </div>
+
+        <div class="bg-white rounded shadow hover:shadow-lg transition">
+          <img src="https://via.placeholder.com/400x200" class="rounded-t" alt="Blog Image" />
+          <div class="p-4">
+            <h3 class="text-lg font-semibold text-blue-800">Securing Cloud Infrastructure</h3>
+            <p class="text-sm text-gray-500 mb-2">June 3, 2025</p>
+            <p class="text-sm text-gray-700">Best practices and tools for managing and monitoring AWS security posture.</p>
+          </div>
+        </div>
+
+        <!-- Add more cards as needed -->
+      </div>
     </section>
   </main>
 
-  <footer>
-    <p>&copy; 2025 Kashinath Hiremath</p>
+  <!-- Footer -->
+  <footer class="bg-white shadow mt-8">
+    <div class="container mx-auto px-4 py-4 text-sm text-center text-gray-500">
+      © 2025 AWS Blog Clone | Built for Demo
+    </div>
   </footer>
-
-  <script>
-    const main = document.getElementById('main-container');
-    let currentSection = 0;
-    function scrollToSection(direction) {
-      const totalSections = main.children.length;
-      currentSection = Math.max(0, Math.min(totalSections - 1, currentSection + direction));
-      const offset = currentSection * window.innerWidth;
-      main.scrollTo({ left: offset, behavior: 'smooth' });
-    }
-  </script>
 </body>
 </html>
