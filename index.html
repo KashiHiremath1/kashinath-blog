@@ -3,8 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>AWS Blogs Clone</title>
+  <title>AWS Blogs Clone with Filters</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .blog-card { display: none; } /* Default hide all blog cards */
+  </style>
 </head>
 <body class="bg-gray-100 text-gray-800">
 
@@ -12,11 +15,6 @@
   <header class="bg-white shadow">
     <div class="container mx-auto px-4 py-4 flex justify-between items-center">
       <h1 class="text-2xl font-bold text-[#232f3e]">AWS Blogs</h1>
-      <nav class="space-x-4">
-        <a href="#" class="text-sm font-medium text-gray-700 hover:text-black">Home</a>
-        <a href="#" class="text-sm font-medium text-gray-700 hover:text-black">Categories</a>
-        <a href="#" class="text-sm font-medium text-gray-700 hover:text-black">About</a>
-      </nav>
     </div>
   </header>
 
@@ -27,47 +25,66 @@
     <aside class="w-full md:w-1/4 bg-white rounded shadow p-4">
       <h2 class="text-lg font-semibold mb-4">Filter by Category</h2>
       <ul class="space-y-2 text-sm">
-        <li><input type="checkbox" id="compute" /> <label for="compute">Compute</label></li>
-        <li><input type="checkbox" id="storage" /> <label for="storage">Storage</label></li>
-        <li><input type="checkbox" id="devops" /> <label for="devops">DevOps</label></li>
-        <li><input type="checkbox" id="ai" /> <label for="ai">AI/ML</label></li>
-        <li><input type="checkbox" id="iot" /> <label for="iot">IoT</label></li>
+        <li><input type="checkbox" class="filter-checkbox" value="compute" id="compute"> <label for="compute">Compute</label></li>
+        <li><input type="checkbox" class="filter-checkbox" value="storage" id="storage"> <label for="storage">Storage</label></li>
+        <li><input type="checkbox" class="filter-checkbox" value="devops" id="devops"> <label for="devops">DevOps</label></li>
+        <li><input type="checkbox" class="filter-checkbox" value="ai" id="ai"> <label for="ai">AI/ML</label></li>
+        <li><input type="checkbox" class="filter-checkbox" value="iot" id="iot"> <label for="iot">IoT</label></li>
       </ul>
     </aside>
 
     <!-- Blog Grid -->
     <section class="flex-1">
-      <div class="grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-        <!-- Blog Card -->
-        <div class="bg-white rounded shadow hover:shadow-lg transition">
+      <div id="blog-container" class="grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+        <!-- Blog Card: Compute -->
+        <div class="blog-card bg-white rounded shadow transition compute">
           <img src="https://via.placeholder.com/400x200" class="rounded-t" alt="Blog Image" />
           <div class="p-4">
-            <h3 class="text-lg font-semibold text-blue-800">How to Get Started with AWS Lambda</h3>
+            <h3 class="text-lg font-semibold text-blue-800">Getting Started with AWS Lambda</h3>
             <p class="text-sm text-gray-500 mb-2">June 5, 2025</p>
-            <p class="text-sm text-gray-700">Learn how to build serverless applications using AWS Lambda and best practices...</p>
+            <p class="text-sm text-gray-700">Learn how to build serverless apps using AWS Lambda.</p>
           </div>
         </div>
 
-        <!-- Repeat -->
-        <div class="bg-white rounded shadow hover:shadow-lg transition">
+        <!-- Blog Card: AI -->
+        <div class="blog-card bg-white rounded shadow transition ai">
           <img src="https://via.placeholder.com/400x200" class="rounded-t" alt="Blog Image" />
           <div class="p-4">
-            <h3 class="text-lg font-semibold text-blue-800">Data Analytics on AWS</h3>
+            <h3 class="text-lg font-semibold text-blue-800">AI Models on SageMaker</h3>
             <p class="text-sm text-gray-500 mb-2">June 4, 2025</p>
-            <p class="text-sm text-gray-700">A deep dive into modern data lakes and analytics workflows on the cloud.</p>
+            <p class="text-sm text-gray-700">Deploy and monitor ML models with Amazon SageMaker.</p>
           </div>
         </div>
 
-        <div class="bg-white rounded shadow hover:shadow-lg transition">
+        <!-- Blog Card: Storage -->
+        <div class="blog-card bg-white rounded shadow transition storage">
           <img src="https://via.placeholder.com/400x200" class="rounded-t" alt="Blog Image" />
           <div class="p-4">
-            <h3 class="text-lg font-semibold text-blue-800">Securing Cloud Infrastructure</h3>
+            <h3 class="text-lg font-semibold text-blue-800">Managing S3 Buckets</h3>
             <p class="text-sm text-gray-500 mb-2">June 3, 2025</p>
-            <p class="text-sm text-gray-700">Best practices and tools for managing and monitoring AWS security posture.</p>
+            <p class="text-sm text-gray-700">A quick guide on optimizing cost and performance in S3.</p>
           </div>
         </div>
 
-        <!-- Add more cards as needed -->
+        <!-- Blog Card: DevOps -->
+        <div class="blog-card bg-white rounded shadow transition devops">
+          <img src="https://via.placeholder.com/400x200" class="rounded-t" alt="Blog Image" />
+          <div class="p-4">
+            <h3 class="text-lg font-semibold text-blue-800">CI/CD with CodePipeline</h3>
+            <p class="text-sm text-gray-500 mb-2">June 2, 2025</p>
+            <p class="text-sm text-gray-700">Automating deployments using AWS CodePipeline and CodeBuild.</p>
+          </div>
+        </div>
+
+        <!-- Blog Card: IoT -->
+        <div class="blog-card bg-white rounded shadow transition iot">
+          <img src="https://via.placeholder.com/400x200" class="rounded-t" alt="Blog Image" />
+          <div class="p-4">
+            <h3 class="text-lg font-semibold text-blue-800">Building IoT Solutions</h3>
+            <p class="text-sm text-gray-500 mb-2">June 1, 2025</p>
+            <p class="text-sm text-gray-700">Connect devices and gather data using AWS IoT Core.</p>
+          </div>
+        </div>
       </div>
     </section>
   </main>
@@ -78,5 +95,60 @@
       © 2025 AWS Blog Clone | Built for Demo
     </div>
   </footer>
+
+  <!-- Removed duplicate script block to avoid redeclaration errors -->
 </body>
 </html>
+<script>
+    // Tailwind CSS configuration
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'blue-800': '#1d4ed8',
+            'gray-100': '#f3f4f6',
+            'gray-500': '#6b7280',
+            'gray-700': '#374151',
+            'white': '#ffffff',
+          }
+        }
+      }
+    };
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    // Tailwind CSS configuration
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'blue-800': '#1d4ed8',
+            'gray-100': '#f3f4f6',
+            'gray-500': '#6b7280',
+            'gray-700': '#374151',
+            'white': '#ffffff',
+          }
+        }
+      }
+    };
+    // Show all blog cards on initial load
+    document.addEventListener("DOMContentLoaded", () => {
+      const cards = document.querySelectorAll(".blog-card");
+      cards.forEach(card => card.style.display = "block");
+    });
+    // Filter functionality
+    const checkboxes = document.querySelectorAll(".filter-checkbox");
+    checkboxes.forEach(checkbox => {
+      checkbox.addEventListener("change", () => {
+        const activeFilters = Array.from(checkboxes)
+          .filter(cb => cb.checked)
+          .map(cb => cb.value);
+
+        const cards = document.querySelectorAll(".blog-card");
+        cards.forEach(card => {
+          const match = activeFilters.some(filter => card.classList.contains(filter));
+          card.style.display = activeFilters.length === 0 || match ? "block" : "none";
+        });
+      });
+    });
+  </script> 
