@@ -16,9 +16,8 @@
 From basic to advanced: test how well you know JavaScript, refresh your knowledge a bit or prepare for your coding interview! :muscle: :rocket: I update this repo regularly with new questions. I added the answers in the **collapsed sections** below the questions, simply click on them to expand it. It's just for fun, good luck! :heart:</p>
 
 <p align="center">Feel free to reach out to me! 😊</p>
-| Thank you and have fun! |
-| ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
----
+                                                                                                                                   | Thank you and have fun! |
+|| --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- ||
 
 ###### 1. What's the output?
 
